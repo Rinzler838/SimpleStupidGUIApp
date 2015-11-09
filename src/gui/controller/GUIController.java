@@ -7,7 +7,7 @@ public class GUIController
 	/**
 	 * Reference to the GUIFrame object for internal use.
 	 */
-	private GUIFrame basePanel;
+	private GUIFrame baseFrame;
 	
 	/**
 	 * Creates a GUIController and initializes the GUIFrame.
