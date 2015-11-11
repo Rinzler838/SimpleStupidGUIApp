@@ -10,10 +10,10 @@ import java.awt.event.ActionEvent;
 
 public class GUIPanel extends JPanel
 {
-	private GUIController baseController;
-	private JButton firstButton;
-	private JTextField firstField;
-	private SpringLayout baseLayout;
+		private GUIController baseController;
+		private JButton firstButton;
+		private JTextField firstField;
+		private SpringLayout baseLayout;
 	
 	public GUIPanel(GUIController baseController)
 	{
@@ -22,7 +22,6 @@ public class GUIPanel extends JPanel
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("DO NOT CLICK THIS BUTTON...");
 		firstField = new JTextField("Type words here...");
-		
 		
 		setupPanel();
 		setupLayout();
