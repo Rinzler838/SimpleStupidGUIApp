@@ -1,12 +1,9 @@
 package gui.view;
 
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
+import javax.swing.*;
+
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 
 import gui.controller.GUIController;
 
@@ -64,5 +61,49 @@ public class GUIPanel extends JPanel
 				 firstField.setText("Wow, that was an amazing click...");
 			 }
 		 });
+		 
+
+		this.addMouseListener(new MouseListener()
+		{
+			public void mouseClicked(MouseEvent click)
+			{
+				
+			}
+
+			public void mousePressed(MouseEvent pressed)
+			{
+				
+			}
+
+			public void mouseReleased(MouseEvent released)
+			{			
+				
+			}
+
+			public void mouseEntered(MouseEvent entered)
+			{
+				
+			}
+
+			public void mouseExited(MouseEvent exited)
+			{			
+				
+			}	
+		});
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
