@@ -21,7 +21,7 @@ public class GUIPanel extends JPanel
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("CLICK HERE FOR SARCASM...");
 		firstField = new JTextField("You can type words here...");
-		
+	
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -43,13 +43,13 @@ public class GUIPanel extends JPanel
 	 */
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.SOUTH, firstButton, -10, SpringLayout.SOUTH, this);
 		baseLayout.putConstraint(SpringLayout.NORTH, firstField, 10, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, firstField, 10, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, firstField, -10, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 6, SpringLayout.SOUTH, firstField);
-		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 0, SpringLayout.WEST, firstField);
-		baseLayout.putConstraint(SpringLayout.EAST, firstButton, 0, SpringLayout.EAST, firstField);
+		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 138, SpringLayout.SOUTH, firstField);
+		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 42, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, firstButton, -82, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, firstButton, -38, SpringLayout.EAST, this);
 	}
 	
 	private void changeColor()
@@ -77,7 +77,7 @@ public class GUIPanel extends JPanel
 		{
 			public void mouseClicked(MouseEvent click)
 			{
-				
+				changeColor();
 			}
 
 			public void mousePressed(MouseEvent pressed)
@@ -92,13 +92,35 @@ public class GUIPanel extends JPanel
 
 			public void mouseEntered(MouseEvent entered)
 			{
-				
+				//changeColor();
 			}
 
 			public void mouseExited(MouseEvent exited)
 			{			
-				
+				//changeColor();
 			}	
+		});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+			public void mouseMoved(MouseEvent moved)
+			{
+				if (moved.isAltDown())
+				{
+					changeColor();
+				}
+				
+				if ((Math.abs(moved.getX() - firstButton.getX()) < 5) &&
+						(Math.abs(moved.getY() - firstButton.getY()) < 5))
+				{		
+					firstButton.setLocation((int) (Math.random() * 400), (int) (Math.random() * 400));
+				}
+			}
+			
+			public void mouseDragged(MouseEvent dragged)
+			{
+				changeColor();
+			}
 		});
 	}
 }
