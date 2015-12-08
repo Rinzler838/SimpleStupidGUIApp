@@ -1,10 +1,8 @@
 package gui.view;
 
 import javax.swing.*;
-
 import java.awt.Color;
 import java.awt.event.*;
-
 import gui.controller.GUIController;
 
 public class GUIPanel extends JPanel
